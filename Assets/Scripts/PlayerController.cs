@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState
+public class PlayerController : MonoBehaviour
 {
-    Game,
-    Credits
-}
+    [SerializeField] private GameObject player;
 
-public class GameController : MonoBehaviour
-{
     private void Start()
     {
         
