@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 81202bc61418c4d6c95374d278ea2e0a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ukko1
+    21300002: ukko2
+    21300004: ukkoWalk1
+    21300006: ukkoWalk2
+    21300008: ukkoWalk3
+    21300010: ukkowalk4
+    21300012: ukkoPickup
+    21300014: ukkoSwing1
+    21300016: ukkoSwing3
+    21300018: ukkoSwing2
+    21300020: twig
+    21300022: axe
+    21300024: Hand_twig
+    21300026: hand_axe
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ukko1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 949
+        width: 444
+        height: 519
+      alignment: 9
+      pivot: {x: 0.5846493, y: 0.045749553}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209d834951d964913ac2c075f9c32d67
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukko2
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 966
+        width: 420
+        height: 523
+      alignment: 9
+      pivot: {x: 0.5406756, y: 0.036157902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8983c653b5641afba9164f3aeea7ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoWalk1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1485
+        width: 413
+        height: 520
+      alignment: 9
+      pivot: {x: 0.5413651, y: 0.086047366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cf600d0bf834e95849d7a6717932a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoWalk2
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1502
+        width: 376
+        height: 527
+      alignment: 9
+      pivot: {x: 0.49091324, y: 0.07209561}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e3eee7fe7ce4edf9d80399ff915b26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoWalk3
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1519
+        width: 400
+        height: 529
+      alignment: 9
+      pivot: {x: 0.51708376, y: 0.054336287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae9c77dbb8444c8d8648e88f3b914b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkowalk4
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 969
+        width: 400
+        height: 527
+      alignment: 9
+      pivot: {x: 0.53416747, y: 0.09154567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38eb92a992ea8468d8cc3a1dc366503d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoPickup
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 433
+        width: 417
+        height: 495
+      alignment: 9
+      pivot: {x: 0.4918065, y: 0.044433102}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7713ca8d31bdd4901abd4f90dfe53999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoSwing1
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1461
+        width: 656
+        height: 581
+      alignment: 9
+      pivot: {x: 0.6222458, y: 0.049352333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd33f7a9439004e77809df539e930ca8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoSwing3
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 932
+        width: 687
+        height: 523
+      alignment: 9
+      pivot: {x: 0.32095626, y: 0.062289935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3482657e8124d23bcebb985444a353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoSwing2
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 402
+        width: 759
+        height: 502
+      alignment: 9
+      pivot: {x: 0.3784556, y: 0.0712045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb44193edf8d64841a4d3ddff19bc27f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: twig
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 64
+        width: 123
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fc83f98de7a43a8b8725ce348ebc2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 47
+        width: 191
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13690835fd0448b08242b959bfe5ddf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hand_twig
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 26
+        width: 324
+        height: 222
+      alignment: 9
+      pivot: {x: 0.26799878, y: 0.7616423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0845d66ff7d894cb68d6638e8bc72f60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand_axe
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 13
+        width: 393
+        height: 290
+      alignment: 9
+      pivot: {x: 0.26526144, y: 0.8063293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f83fa9f17b6c42deb8c82f2e6c02196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bfe77e453d17844aaae60dcb66e46aa3
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
