@@ -7,6 +7,7 @@ public class Tree : MonoBehaviour
     public bool HasFallen { get { return hasFallen; } }
 
     [SerializeField] private int hitAmountMax = 3;
+    [SerializeField] private ParticleSystem treeParticles;
 
     private int hitAmount;
     private bool hasFallen = false;
@@ -45,5 +46,10 @@ public class Tree : MonoBehaviour
             return false;
         }
         return hasFallen;
+    }
+
+    public void PlayTreeParticles()
+    {
+        treeParticles.Play();
     }
 }
