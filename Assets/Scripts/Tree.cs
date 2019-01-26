@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
+    public bool HasFallen { get { return hasFallen; } }
+
     [SerializeField] private int hitAmountMax = 3;
 
     private int hitAmount;

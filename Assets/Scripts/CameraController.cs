@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : Singleton<CameraController>
 {
-    [SerializeField] private PlayerController playerController;
     [Header("Shake")]
     [SerializeField] private float minShake = 0.5f;
     [SerializeField] private float maxShake = 1f;
@@ -30,7 +29,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.rotation = playerController.transform.rotation;
+        transform.rotation = PlayerController.Instance.transform.rotation;
     }
 
     public void Shake(float shakeSpeed, float shakeForce)

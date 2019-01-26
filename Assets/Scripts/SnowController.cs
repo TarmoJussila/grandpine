@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowController : MonoBehaviour
+public class SnowController : Singleton<SnowController>
 {
     [SerializeField] private ParticleSystem snowStormParticles;
 

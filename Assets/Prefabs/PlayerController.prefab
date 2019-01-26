@@ -44,12 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5c596b54b1c284f867bfca765ba8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 0}
   player: {fileID: 8732795838496825334}
   playerAnimator: {fileID: 280864912066229684}
   tree: {fileID: 0}
   rotationSpeed: 50
   treeRange: 4
+  actionDelay: 1
+--- !u!114 &145450536301682772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244284521529049692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a54159e3815b24488c06a8804d2686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5002123408236364498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +140,12 @@ GameObject:
 --- !u!4 &5887925369190229964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1503358201590998302, guid: a79f4527764b24879bfcd6bf1859e07b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5002123408236364498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1244284521529049692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6066219586248360078, guid: a79f4527764b24879bfcd6bf1859e07b,
     type: 3}
   m_PrefabInstance: {fileID: 5002123408236364498}
   m_PrefabAsset: {fileID: 0}

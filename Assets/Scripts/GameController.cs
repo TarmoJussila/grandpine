@@ -8,8 +8,10 @@ public enum GameState
     Credits
 }
 
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController>
 {
+
+
     private void Start()
     {
         

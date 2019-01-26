@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public Transform PlayerTransform { get { return player.transform; } }
+    public Tree Tree { get { return tree; } }
 
     [Header("References")]
-    [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject player;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private Tree tree;
@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 50f;
     [SerializeField] private float treeRange = 4f;
+    [SerializeField] private float actionDelay = 1f;
+
+    private float currentActionTimer;
 
     private void Start()
     {
@@ -50,28 +53,34 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetTrigger("StopWalk");
         }
 
-        if (IsCollectableInRange())
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            if (currentActionTimer > 0f)
+            {
+                return;
+            }
+
+            if (IsCollectableInRange())
             {
                 playerAnimator.SetTrigger("Collect");
+                currentActionTimer = actionDelay;
             }
-        }
-        else if (IsTreeInRange())
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            else if (IsTreeInRange())
             {
-                bool hasFallen = tree.Hit();
-
-                if (!hasFallen)
+                if (!tree.HasFallen)
                 {
                     playerAnimator.SetTrigger("Hit");
-                    cameraController.Shake(10, 0.5f);
+                    currentActionTimer = actionDelay;
                 }
             }
+
+            Debug.Log("Action event");
         }
 
-
+        if (currentActionTimer > 0f)
+        {
+            currentActionTimer = Mathf.Max(currentActionTimer - Time.deltaTime, 0f);
+        }
     }
 
     private bool IsTreeInRange()
