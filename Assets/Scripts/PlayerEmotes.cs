@@ -17,12 +17,21 @@ public class PlayerEmotes : MonoBehaviour
     [SerializeField] private Sprite houseSprite;
     [SerializeField] private Sprite axeSprite;
     [SerializeField] private Sprite heartSprite;
+    private Vector3 playerDirection;
 
     private float animationTime = 0;
 
     private void Start()
     {
         ShowEmote(Emote.Twig);
+    }
+
+    private void Update()
+    {
+        // Not a h4ck :D
+        Vector3 scale = container.transform.localScale;
+        scale.x = Mathf.Abs(scale.x);
+        container.transform.localScale = scale;
     }
 
     public void ShowEmote(Emote emote)
