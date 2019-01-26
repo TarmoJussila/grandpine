@@ -40,6 +40,18 @@ public class CameraController : Singleton<CameraController>
         StartCoroutine(ProcessShake(shakeSpeed, shakeForce));
     }
 
+    public void ZoomIn(float speed, float amount)
+    {
+        StopAllCoroutines();
+        StartCoroutine(Zoom(1, speed, amount));
+    }
+
+    public void ZoomOut(float speed, float amount)
+    {
+        StopAllCoroutines();
+        StartCoroutine(Zoom(-1, speed, amount));
+    }
+
     // https://en.wikipedia.org/wiki/Damped_sine_wave
     private IEnumerator ProcessShake(float shakeSpeed, float shakeForce)
     {
@@ -51,6 +63,18 @@ public class CameraController : Singleton<CameraController>
             Vector3 right = shakeHorizontally ? cam.transform.right * rightShake * shakeForce : Vector3.zero;
             Vector3 up = shakeVertically ? cam.transform.up * upShake * shakeForce : Vector3.zero;
             transform.position = startPosition + right + up;
+            yield return null;
+        }
+    }
+
+    private IEnumerator Zoom(int direction, float speed, float amount)
+    {
+        Vector3 originalPosition = cam.transform.position;
+        Vector3 forward = cam.transform.forward * direction;
+        for (float time = 0; time < 1; time += Time.deltaTime * speed)
+        {
+            Vector3 position = originalPosition + forward * amount * time;
+            cam.transform.position = position;
             yield return null;
         }
     }
