@@ -37,5 +37,7 @@ public class Player : MonoBehaviour
     private void TwigCollect()
     {
         PlayerController.Instance.Twig.Collect();
+        //AudioController.Instance.PlaySound(SoundType.TwigCollect);
+        AudioController.Instance.RaiseMusicVolume();
     }
 }
