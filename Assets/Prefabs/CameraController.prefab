@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  shakeSpeed: 6
+  minShake: 0.5
+  maxShake: 1
+  shakeHorizontally: 1
+  shakeVertically: 1
+  shakeOnStart: 0
 --- !u!1 &6836562073719794807
 GameObject:
   m_ObjectHideFlags: 0
