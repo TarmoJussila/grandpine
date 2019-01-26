@@ -13,11 +13,13 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject playerTwig;
     [SerializeField] private GameObject playerAxe;
+    [SerializeField] private GameObject houseDoor;
     [SerializeField] private Tree tree;
     [SerializeField] private Twig twig;
 
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 50f;
+    [SerializeField] private float houseDoorRange = 3f;
     [SerializeField] private float treeRange = 4f;
     [SerializeField] private float twigRange = 2f;
     [SerializeField] private float actionDelay = 1f;
@@ -68,7 +70,12 @@ public class PlayerController : Singleton<PlayerController>
                 return;
             }
 
-            if (IsTwigInRange() && !isHoldingAnything)
+            if (IsHouseDoorInRange() && isHoldingTwig)
+            {
+                DisableTwig();
+                currentActionTimer = actionDelay;
+            }
+            else if (IsTwigInRange() && !isHoldingAnything)
             {
                 if (!twig.IsCollected)
                 {
@@ -76,7 +83,7 @@ public class PlayerController : Singleton<PlayerController>
                     currentActionTimer = actionDelay;
                 }
             }
-            else if (IsTreeInRange() && !isHoldingAnything)
+            else if (IsTreeInRange() && isHoldingAxe)
             {
                 if (!tree.HasFallen)
                 {
@@ -114,6 +121,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerAxe.SetActive(false);
         isHoldingAxe = false;
+    }
+
+    private bool IsHouseDoorInRange()
+    {
+        return houseDoorRange > Vector3.Distance(houseDoor.transform.position, player.transform.position);
     }
 
     private bool IsTreeInRange()

@@ -400,9 +400,11 @@ MonoBehaviour:
   playerAnimator: {fileID: 280864912066229684}
   playerTwig: {fileID: 6309262809583687237}
   playerAxe: {fileID: 4119558152733863153}
+  houseDoor: {fileID: 0}
   tree: {fileID: 0}
   twig: {fileID: 0}
   rotationSpeed: 50
+  houseDoorRange: 3
   treeRange: 4
   twigRange: 2
   actionDelay: 1
