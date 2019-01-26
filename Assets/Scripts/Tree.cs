@@ -24,13 +24,23 @@ public class Tree : MonoBehaviour
         {
             if (hitAmount < hitAmountMax)
             {
-                animator.SetTrigger("Hit");
                 hitAmount++;
+                animator.SetTrigger("Hit");
+                bool randomSound = (Random.Range(0, 2) == 0);
+                if (randomSound)
+                {
+                    AudioController.Instance.PlaySound(SoundType.TreeHit1);
+                }
+                else
+                {
+                    AudioController.Instance.PlaySound(SoundType.TreeHit2);
+                }
             }
             else
             {
-                animator.SetTrigger("Fall");
                 hasFallen = true;
+                animator.SetTrigger("Fall");
+                AudioController.Instance.PlaySound(SoundType.TreeFall);
             }
             return false;
         }

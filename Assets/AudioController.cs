@@ -10,7 +10,7 @@ public enum SoundType
     AxeHit,
     TreeHit1,
     TreeHit2,
-    TreFall,
+    TreeFall,
 }
 
 [System.Serializable]
