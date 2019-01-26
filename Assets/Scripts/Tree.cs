@@ -30,6 +30,7 @@ public class Tree : MonoBehaviour
                 animator.SetTrigger("Fall");
                 hasFallen = true;
             }
+            return false;
         }
         return hasFallen;
     }
