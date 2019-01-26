@@ -204,6 +204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5c596b54b1c284f867bfca765ba8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1981201534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5937929680593282061, guid: 485bc8c131a3283459f691731218c7ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 7979167589451362082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b53698e477d0c642ab6bc2bb6442dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &681970162266224251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +610,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 8993915436402867755, guid: cb6dbc8919a885745a3637ecf738e2c6,
+        type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 1981201534}
     - target: {fileID: 8993915436402867755, guid: cb6dbc8919a885745a3637ecf738e2c6,
         type: 3}
       propertyPath: tree

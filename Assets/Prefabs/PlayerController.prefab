@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5c596b54b1c284f867bfca765ba8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 0}
   player: {fileID: 8732795838496825334}
   rotationSpeed: 50
   tree: {fileID: 0}
-  treeRange: 2.5
+  treeRange: 4
 --- !u!1001 &5002123408236364498
 PrefabInstance:
   m_ObjectHideFlags: 0

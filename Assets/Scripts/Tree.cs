@@ -16,7 +16,7 @@ public class Tree : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Hit()
+    public bool Hit()
     {
         if (!hasFallen)
         {
@@ -31,5 +31,6 @@ public class Tree : MonoBehaviour
                 hasFallen = true;
             }
         }
+        return hasFallen;
     }
 }

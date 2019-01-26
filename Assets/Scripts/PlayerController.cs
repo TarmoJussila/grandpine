@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Transform PlayerTransform { get { return player.transform; } }
 
+    [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject player;
     [SerializeField] private float rotationSpeed = 1f;
     [SerializeField] private Tree tree;
@@ -30,7 +31,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
             {
-                tree.Hit();
+                bool hasFallen = tree.Hit();
+
+                if (!hasFallen)
+                {
+                    cameraController.Shake();
+                }
             }
         }
     }
