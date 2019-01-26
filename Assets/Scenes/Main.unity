@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657725, g: 0.49641305, b: 0.5748148, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465772, g: 0.49641305, b: 0.5748143, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,6 +220,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 8162448162837513882, guid: 20b452593934f4d6e99651dab58597f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3213002090000533729, guid: 20b452593934f4d6e99651dab58597f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -279,6 +284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900501572071599383, guid: 20b452593934f4d6e99651dab58597f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b452593934f4d6e99651dab58597f6, type: 3}
@@ -348,6 +358,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728026261, guid: cbd0a3359ab991541b44a6525619f181, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd0a3359ab991541b44a6525619f181, type: 3}
@@ -820,6 +834,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5002123408729886552, guid: cb6dbc8919a885745a3637ecf738e2c6,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
 --- !u!114 &5286728777949544935 stripped
@@ -845,6 +864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmokeEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306254265594698632, guid: da520abac374d468abbb2f1cc43dc5e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3310027803594345960, guid: da520abac374d468abbb2f1cc43dc5e5,
         type: 3}
@@ -900,6 +924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306254264412562822, guid: da520abac374d468abbb2f1cc43dc5e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da520abac374d468abbb2f1cc43dc5e5, type: 3}
@@ -975,6 +1004,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281314542936091022, guid: 485bc8c131a3283459f691731218c7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093016721884774915, guid: 485bc8c131a3283459f691731218c7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808237168231404903, guid: 485bc8c131a3283459f691731218c7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728023917140459242, guid: 485bc8c131a3283459f691731218c7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485bc8c131a3283459f691731218c7ef, type: 3}
