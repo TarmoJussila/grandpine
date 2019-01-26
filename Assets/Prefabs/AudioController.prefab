@@ -201,6 +201,10 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: bd2c066e5837f48719dd764158c3e716, type: 3}
     Volume: 1
     IsRandomPitch: 0
+  - SoundType: 6
+    AudioClip: {fileID: 8300000, guid: aa8a38ff59c3c4b699aea09b61f54202, type: 3}
+    Volume: 0.8
+    IsRandomPitch: 0
   minPitch: 0.8
   maxPitch: 1.2
   ambientTargetVolume: 0.5
