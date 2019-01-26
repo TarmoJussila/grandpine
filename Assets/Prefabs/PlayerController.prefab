@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraController: {fileID: 0}
   player: {fileID: 8732795838496825334}
-  rotationSpeed: 50
+  playerAnimator: {fileID: 280864912066229684}
   tree: {fileID: 0}
+  rotationSpeed: 50
   treeRange: 4
 --- !u!1001 &5002123408236364498
 PrefabInstance:
@@ -127,6 +128,12 @@ GameObject:
 --- !u!4 &5887925369190229964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1503358201590998302, guid: a79f4527764b24879bfcd6bf1859e07b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5002123408236364498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &280864912066229684 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5084222694875756390, guid: a79f4527764b24879bfcd6bf1859e07b,
     type: 3}
   m_PrefabInstance: {fileID: 5002123408236364498}
   m_PrefabAsset: {fileID: 0}
