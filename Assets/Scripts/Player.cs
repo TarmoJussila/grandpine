@@ -19,4 +19,17 @@ public class Player : MonoBehaviour
     {
         SnowController.Instance.PlayStormParticles();
     }
+
+    private void WalkSound()
+    {
+        bool randomSound = (Random.Range(0, 2) == 0);
+        if (randomSound)
+        {
+            AudioController.Instance.PlaySound(SoundType.Walk1);
+        }
+        else
+        {
+            AudioController.Instance.PlaySound(SoundType.Walk2);
+        }
+    }
 }
