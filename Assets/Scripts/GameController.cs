@@ -16,9 +16,4 @@ public class GameController : Singleton<GameController>
     {
         Application.targetFrameRate = targetFps;
     }
-
-    private void Update()
-    {
-        
-    }
 }

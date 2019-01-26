@@ -22,6 +22,9 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float twigRange = 2f;
     [SerializeField] private float actionDelay = 1f;
 
+    private bool isHoldingAnything { get { return isHoldingTwig || isHoldingAxe; } }
+    private bool isHoldingTwig;
+    private bool isHoldingAxe;
     private float currentActionTimer;
 
     private void Start()
@@ -65,7 +68,7 @@ public class PlayerController : Singleton<PlayerController>
                 return;
             }
 
-            if (IsTwigInRange())
+            if (IsTwigInRange() && !isHoldingAnything)
             {
                 if (!twig.IsCollected)
                 {
@@ -73,7 +76,7 @@ public class PlayerController : Singleton<PlayerController>
                     currentActionTimer = actionDelay;
                 }
             }
-            else if (IsTreeInRange())
+            else if (IsTreeInRange() && !isHoldingAnything)
             {
                 if (!tree.HasFallen)
                 {
@@ -92,21 +95,25 @@ public class PlayerController : Singleton<PlayerController>
     public void EnableTwig()
     {
         playerTwig.SetActive(true);
+        isHoldingTwig = true;
     }
 
     public void DisableTwig()
     {
         playerTwig.SetActive(false);
+        isHoldingTwig = false;
     }
 
     public void EnableAxe()
     {
         playerAxe.SetActive(true);
+        isHoldingAxe = true;
     }
 
     public void DisableAxe()
     {
         playerAxe.SetActive(false);
+        isHoldingAxe = false;
     }
 
     private bool IsTreeInRange()
