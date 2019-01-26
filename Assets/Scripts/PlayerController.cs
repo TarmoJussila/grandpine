@@ -6,15 +6,20 @@ public class PlayerController : Singleton<PlayerController>
 {
     public Transform PlayerTransform { get { return player.transform; } }
     public Tree Tree { get { return tree; } }
+    public Twig Twig { get { return twig; } }
 
     [Header("References")]
     [SerializeField] private GameObject player;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private GameObject playerTwig;
+    [SerializeField] private GameObject playerAxe;
     [SerializeField] private Tree tree;
+    [SerializeField] private Twig twig;
 
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 50f;
     [SerializeField] private float treeRange = 4f;
+    [SerializeField] private float twigRange = 2f;
     [SerializeField] private float actionDelay = 1f;
 
     private float currentActionTimer;
@@ -60,10 +65,13 @@ public class PlayerController : Singleton<PlayerController>
                 return;
             }
 
-            if (IsCollectableInRange())
+            if (IsTwigInRange())
             {
-                playerAnimator.SetTrigger("Collect");
-                currentActionTimer = actionDelay;
+                if (!twig.IsCollected)
+                {
+                    playerAnimator.SetTrigger("Collect");
+                    currentActionTimer = actionDelay;
+                }
             }
             else if (IsTreeInRange())
             {
@@ -73,8 +81,6 @@ public class PlayerController : Singleton<PlayerController>
                     currentActionTimer = actionDelay;
                 }
             }
-
-            Debug.Log("Action event");
         }
 
         if (currentActionTimer > 0f)
@@ -83,13 +89,33 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    public void EnableTwig()
+    {
+        playerTwig.SetActive(true);
+    }
+
+    public void DisableTwig()
+    {
+        playerTwig.SetActive(false);
+    }
+
+    public void EnableAxe()
+    {
+        playerAxe.SetActive(true);
+    }
+
+    public void DisableAxe()
+    {
+        playerAxe.SetActive(false);
+    }
+
     private bool IsTreeInRange()
     {
         return treeRange > Vector3.Distance(tree.transform.position, player.transform.position);
     }
 
-    private bool IsCollectableInRange()
+    private bool IsTwigInRange()
     {
-        return false;
+        return twigRange > Vector3.Distance(twig.transform.position, player.transform.position);
     }
 }
