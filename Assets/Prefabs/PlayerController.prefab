@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 216706727027269741}
-  rotationSpeed: 100
+  rotationSpeed: 50
+  tree: {fileID: 0}
+  treeRange: 2.5
 --- !u!1001 &734376848743817637
 PrefabInstance:
   m_ObjectHideFlags: 0
