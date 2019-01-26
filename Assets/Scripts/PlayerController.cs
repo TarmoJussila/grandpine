@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Transform PlayerTransform { get { return player.transform; } }
+
     [SerializeField] private GameObject player;
     [SerializeField] private float rotationSpeed = 1f;
     [SerializeField] private Tree tree;
