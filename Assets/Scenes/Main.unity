@@ -137,6 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayLength: 30
+  maxIntensity: 1
+  minIntensity: 0
 --- !u!4 &801162364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5887925369190229964, guid: cb6dbc8919a885745a3637ecf738e2c6,
@@ -907,7 +909,7 @@ PrefabInstance:
     - target: {fileID: 3306254265594698632, guid: da520abac374d468abbb2f1cc43dc5e5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3310027803594345960, guid: da520abac374d468abbb2f1cc43dc5e5,
         type: 3}
@@ -963,6 +965,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306254266108889652, guid: da520abac374d468abbb2f1cc43dc5e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215025132112326842, guid: da520abac374d468abbb2f1cc43dc5e5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da520abac374d468abbb2f1cc43dc5e5, type: 3}
