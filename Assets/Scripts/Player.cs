@@ -33,4 +33,9 @@ public class Player : MonoBehaviour
             AudioController.Instance.PlaySound(SoundType.Walk2);
         }
     }
+
+    private void TwigCollect()
+    {
+        PlayerController.Instance.Twig.Collect();
+    }
 }
