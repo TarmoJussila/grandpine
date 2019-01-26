@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Tree tree;
 
     [Header("Settings")]
-    [SerializeField] private float rotationSpeed = 1f;
-    [SerializeField] private float treeRange = 3f;
+    [SerializeField] private float rotationSpeed = 50f;
+    [SerializeField] private float treeRange = 4f;
 
     private void Start()
     {
@@ -26,18 +26,28 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + Time.deltaTime * rotationSpeed, 0);
 
+            if (player.transform.localScale.x > 0f)
+            {
+                player.transform.localScale = new Vector3(-player.transform.localScale.x, player.transform.localScale.y, player.transform.localScale.z);
+            }
+
             playerAnimator.SetTrigger("Walk");
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y - Time.deltaTime * rotationSpeed, 0);
 
+            if (player.transform.localScale.x < 0f)
+            {
+                player.transform.localScale = new Vector3(-player.transform.localScale.x, player.transform.localScale.y, player.transform.localScale.z);
+            }
+
             playerAnimator.SetTrigger("Walk");
         }
         else
         {
             playerAnimator.ResetTrigger("Walk");
-            playerAnimator.SetTrigger("Idle");
+            playerAnimator.SetTrigger("StopWalk");
         }
 
         if (IsCollectableInRange())
