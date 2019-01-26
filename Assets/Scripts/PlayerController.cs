@@ -55,8 +55,8 @@ public class PlayerController : MonoBehaviour
 
                 if (!hasFallen)
                 {
-                    cameraController.Shake();
                     playerAnimator.SetTrigger("Hit");
+                    cameraController.Shake(10, 0.5f);
                 }
             }
         }
