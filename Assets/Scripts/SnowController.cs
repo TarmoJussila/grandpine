@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SnowController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ParticleSystem snowStormParticles;
 
-    // Update is called once per frame
-    void Update()
+    public void PlayStormParticles()
     {
-        
+        snowStormParticles.Play();
     }
 }
