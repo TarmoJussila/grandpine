@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465772, g: 0.49641305, b: 0.5748143, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657725, g: 0.49641305, b: 0.5748148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -434,6 +434,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e00a6b0709239848a5c5cf05b6fa036, type: 3}
+--- !u!1 &991854282985847408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6500042086063595046, guid: 8e00a6b0709239848a5c5cf05b6fa036,
+    type: 3}
+  m_PrefabInstance: {fileID: 991854282985847407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1430760204658117689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -771,6 +777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8993915436402867755, guid: cb6dbc8919a885745a3637ecf738e2c6,
         type: 3}
+      propertyPath: houseDoor
+      value: 
+      objectReference: {fileID: 991854282985847408}
+    - target: {fileID: 8993915436402867755, guid: cb6dbc8919a885745a3637ecf738e2c6,
+        type: 3}
       propertyPath: tree
       value: 
       objectReference: {fileID: 4253436675205300540}
@@ -833,11 +844,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002123408729886552, guid: cb6dbc8919a885745a3637ecf738e2c6,
-        type: 3}
-      propertyPath: m_IgnoreLayers.m_Bits
-      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
