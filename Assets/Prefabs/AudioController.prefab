@@ -205,7 +205,7 @@ MonoBehaviour:
   maxPitch: 1.2
   ambientTargetVolume: 0.5
   musicTargetVolume: 1
-  musicRaiseVolume: 0.2
+  musicRaiseVolume: 0.1
 --- !u!1 &5387874628820677057
 GameObject:
   m_ObjectHideFlags: 0

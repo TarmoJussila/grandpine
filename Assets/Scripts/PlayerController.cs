@@ -81,8 +81,6 @@ public class PlayerController : Singleton<PlayerController>
                     currentActionTimer = actionDelay;
                 }
             }
-
-            Debug.Log("Action event");
         }
 
         if (currentActionTimer > 0f)

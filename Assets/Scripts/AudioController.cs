@@ -11,6 +11,7 @@ public enum SoundType
     TreeHit1,
     TreeHit2,
     TreeFall,
+    TwigCollect,
 }
 
 [System.Serializable]
@@ -36,7 +37,7 @@ public class AudioController : Singleton<AudioController>
     [SerializeField] private float maxPitch = 1.2f;
     [SerializeField] private float ambientTargetVolume = 0.5f;
     [SerializeField] private float musicTargetVolume = 1f;
-    [SerializeField] private float musicRaiseVolume = 0.2f;
+    [SerializeField] private float musicRaiseVolume = 0.1f;
 
     private Dictionary<SoundType, Sound> soundsDictionary = new Dictionary<SoundType, Sound>();
 

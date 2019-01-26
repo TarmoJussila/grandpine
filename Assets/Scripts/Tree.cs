@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
-    public bool HasFallen { get { return hasFallen; } }
+    public bool HasFallen { get; private set; }
 
     [SerializeField] private int hitAmountMax = 3;
+    [SerializeField] private ParticleSystem treeParticles;
 
     private int hitAmount;
-    private bool hasFallen = false;
-
     private Animator animator;
 
     private void Start()
@@ -20,7 +19,7 @@ public class Tree : MonoBehaviour
 
     public bool Hit()
     {
-        if (!hasFallen)
+        if (!HasFallen)
         {
             if (hitAmount < hitAmountMax)
             {
@@ -38,12 +37,17 @@ public class Tree : MonoBehaviour
             }
             else
             {
-                hasFallen = true;
+                HasFallen = true;
                 animator.SetTrigger("Fall");
                 AudioController.Instance.PlaySound(SoundType.TreeFall);
             }
             return false;
         }
-        return hasFallen;
+        return HasFallen;
+    }
+
+    public void PlayTreeParticles()
+    {
+        treeParticles.Play();
     }
 }
