@@ -27,18 +27,47 @@ public class AudioController : Singleton<AudioController>
 {
     [Header("References")]
     [SerializeField] private AudioSource ambientAudioSource;
+    [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private AudioSource soundAudioSource;
 
     [Header("Settings")]
     [SerializeField] private List<Sound> sounds = new List<Sound>();
-    [SerializeField] private float minPitch = 0.9f;
-    [SerializeField] private float maxPitch = 1.1f;
+    [SerializeField] private float minPitch = 0.8f;
+    [SerializeField] private float maxPitch = 1.2f;
+    [SerializeField] private float ambientTargetVolume = 0.5f;
+    [SerializeField] private float musicTargetVolume = 1f;
+    [SerializeField] private float musicRaiseVolume = 0.2f;
 
     private Dictionary<SoundType, Sound> soundsDictionary = new Dictionary<SoundType, Sound>();
 
     private void Start()
     {
         soundsDictionary = sounds.ToDictionary(x => x.SoundType, x => x);
+
+        ambientAudioSource.volume = 0f;
+        musicAudioSource.volume = 0f;
+
+        StartCoroutine(RaiseAmbientVolume());
+    }
+
+    private IEnumerator RaiseAmbientVolume()
+    {
+        yield return null;
+
+        while (ambientAudioSource.volume < ambientTargetVolume)
+        {
+            ambientAudioSource.volume = Mathf.Min(ambientAudioSource.volume + Time.deltaTime, ambientTargetVolume);
+        }
+    }
+
+    public void RaiseMusicVolume()
+    {
+        if (!musicAudioSource.isPlaying)
+        {
+            musicAudioSource.Play();
+        }
+
+        musicAudioSource.volume = Mathf.Min(musicAudioSource.volume + musicRaiseVolume, musicTargetVolume);
     }
 
     public void PlaySound(SoundType soundType)

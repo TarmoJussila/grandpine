@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     {
         PlayerController.Instance.Tree.Hit();
         AudioController.Instance.PlaySound(SoundType.AxeHit);
+        AudioController.Instance.RaiseMusicVolume();
     }
 
     private void CameraShake()
