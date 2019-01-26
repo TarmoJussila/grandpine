@@ -16,6 +16,7 @@ TextureImporter:
     21300022: axe
     21300024: Hand_twig
     21300026: hand_axe
+    21300028: ukkoSwing1b
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -143,12 +144,12 @@ TextureImporter:
       name: ukko2
       rect:
         serializedVersion: 2
-        x: 505
-        y: 966
+        x: 502
+        y: 963
         width: 420
         height: 523
       alignment: 9
-      pivot: {x: 0.5406756, y: 0.036157902}
+      pivot: {x: 0.5650812, y: 0.042690065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,7 +329,7 @@ TextureImporter:
         width: 123
         height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -348,7 +349,7 @@ TextureImporter:
         width: 191
         height: 372
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -395,6 +396,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2f83fa9f17b6c42deb8c82f2e6c02196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ukkoSwing1b
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 402
+        width: 554
+        height: 543
+      alignment: 9
+      pivot: {x: 0.64185077, y: 0.040657677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a35423e5cc474ee387a544a30ae7aec
       vertices: []
       indices: 
       edges: []
