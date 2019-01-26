@@ -10,11 +10,11 @@ public enum GameState
 
 public class GameController : Singleton<GameController>
 {
-
+    private readonly int targetFps = 60;
 
     private void Start()
     {
-        
+        Application.targetFrameRate = targetFps;
     }
 
     private void Update()
