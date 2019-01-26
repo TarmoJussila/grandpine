@@ -77,5 +77,6 @@ public class CameraController : Singleton<CameraController>
             cam.transform.position = position;
             yield return null;
         }
+        cam.transform.position = originalPosition + forward * amount;
     }
 }
