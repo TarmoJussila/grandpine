@@ -18,6 +18,9 @@ public class Sound
 {
     public SoundType SoundType;
     public AudioClip AudioClip;
+    [Range(0f, 1f)]
+    public float Volume = 1f;
+    public bool IsRandomPitch;
 }
 
 public class AudioController : Singleton<AudioController>
@@ -28,16 +31,27 @@ public class AudioController : Singleton<AudioController>
 
     [Header("Settings")]
     [SerializeField] private List<Sound> sounds = new List<Sound>();
+    [SerializeField] private float minPitch = 0.9f;
+    [SerializeField] private float maxPitch = 1.1f;
 
-    private Dictionary<SoundType, AudioClip> soundsDictionary = new Dictionary<SoundType, AudioClip>();
+    private Dictionary<SoundType, Sound> soundsDictionary = new Dictionary<SoundType, Sound>();
 
     private void Start()
     {
-        soundsDictionary = sounds.ToDictionary(x => x.SoundType, x => x.AudioClip);
+        soundsDictionary = sounds.ToDictionary(x => x.SoundType, x => x);
     }
 
     public void PlaySound(SoundType soundType)
     {
-        soundAudioSource.PlayOneShot(soundsDictionary[soundType]);
+        soundAudioSource.PlayOneShot(soundsDictionary[soundType].AudioClip, soundsDictionary[soundType].Volume);
+
+        if (soundsDictionary[soundType].IsRandomPitch)
+        {
+            soundAudioSource.pitch = Random.Range(minPitch, maxPitch);
+        }
+        else
+        {
+            soundAudioSource.pitch = 1f;
+        }
     }
 }
