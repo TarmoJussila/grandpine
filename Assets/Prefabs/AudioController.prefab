@@ -50,16 +50,30 @@ MonoBehaviour:
   sounds:
   - SoundType: 0
     AudioClip: {fileID: 8300000, guid: 3602580543d8c49a6abe11a9f7a21fde, type: 3}
+    Volume: 0.6
+    IsRandomPitch: 1
   - SoundType: 1
     AudioClip: {fileID: 8300000, guid: c49d02197c3444f5189dc9f57cfca9ca, type: 3}
+    Volume: 0.8
+    IsRandomPitch: 1
   - SoundType: 2
     AudioClip: {fileID: 8300000, guid: 9ca68af5e663346049b364c4678a29bc, type: 3}
+    Volume: 1
+    IsRandomPitch: 0
   - SoundType: 3
     AudioClip: {fileID: 8300000, guid: b716547cfee1343c1ac66b122091fb78, type: 3}
+    Volume: 1
+    IsRandomPitch: 0
   - SoundType: 4
     AudioClip: {fileID: 8300000, guid: ad9e156144a1a4748b1a3852ace6abaf, type: 3}
+    Volume: 1
+    IsRandomPitch: 0
   - SoundType: 5
     AudioClip: {fileID: 8300000, guid: bd2c066e5837f48719dd764158c3e716, type: 3}
+    Volume: 1
+    IsRandomPitch: 0
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!1 &5387874628820677057
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +119,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
