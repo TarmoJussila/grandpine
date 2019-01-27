@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657725, g: 0.49641305, b: 0.5748148, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465772, g: 0.49641305, b: 0.5748143, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,12 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &18575710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6337282672893109400, guid: 8e00a6b0709239848a5c5cf05b6fa036,
+    type: 3}
+  m_PrefabInstance: {fileID: 991854282985847407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c26a0ed782c454ca4e1fc475cf5ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &170076734 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 2893850083576675170, guid: 14728430740525b428ded5c6327c09b4,
     type: 3}
   m_PrefabInstance: {fileID: 2893850083478032732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &192822794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1555304441, guid: da520abac374d468abbb2f1cc43dc5e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7196481182452114650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c26a0ed782c454ca4e1fc475cf5ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &645457778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2893850083576675169, guid: 14728430740525b428ded5c6327c09b4,
@@ -975,9 +999,14 @@ PrefabInstance:
       objectReference: {fileID: 4253436675205300540}
     - target: {fileID: 8993915436402867755, guid: cb6dbc8919a885745a3637ecf738e2c6,
         type: 3}
-      propertyPath: twigRange
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: houseInsideLight
+      value: 
+      objectReference: {fileID: 18575710}
+    - target: {fileID: 8993915436402867755, guid: cb6dbc8919a885745a3637ecf738e2c6,
+        type: 3}
+      propertyPath: chimneyInsideLight
+      value: 
+      objectReference: {fileID: 192822794}
     - target: {fileID: 1741463340857840488, guid: cb6dbc8919a885745a3637ecf738e2c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1032,38 +1061,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436813, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 831436812, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6dbc8919a885745a3637ecf738e2c6, type: 3}
