@@ -1,29 +1,8 @@
 fileFormatVersion: 2
-guid: c3ddc30a0d578f74bad8e759829f9535
+guid: 10c5963a6abd8af4cb8f54f1081b8ef1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube_001
-    100004: //RootNode
-    400000: Cube
-    400002: Cube_001
-    400004: //RootNode
-    2100000: unnamed
-    2100002: Roof
-    2100004: Walls
-    2100006: Chimney_Brick
-    2100008: Chimney
-    2100010: Window
-    2100012: stone
-    2300000: Cube
-    2300002: Cube_001
-    3300000: Cube
-    3300002: Cube_001
-    4300000: Cube_001
-    4300002: Cube
-    7400000: Default Take
-    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -78,7 +57,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
