@@ -31,6 +31,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool isHoldingTwig;
     private bool isHoldingAxe;
     private float currentActionTimer;
+    private bool treeWasInRange;
 
     private void Start()
     {
@@ -64,6 +65,18 @@ public class PlayerController : Singleton<PlayerController>
         {
             playerAnimator.ResetTrigger("Walk");
             playerAnimator.SetTrigger("StopWalk");
+        }
+
+        bool treeinRange = IsTreeInRange();
+        if (treeinRange && !treeWasInRange)
+        {
+            tree.PlayHeartParticles();
+            treeWasInRange = true;
+        }
+        else if (!treeinRange)
+        {
+
+            treeWasInRange = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))

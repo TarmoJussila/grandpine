@@ -8,6 +8,7 @@ public class Tree : MonoBehaviour
 
     [SerializeField] private int hitAmountMax = 3;
     [SerializeField] private ParticleSystem treeParticles;
+    [SerializeField] private ParticleSystem heartParticles;
 
     private int hitAmount;
     private Animator animator;
@@ -49,5 +50,10 @@ public class Tree : MonoBehaviour
     public void PlayTreeParticles()
     {
         treeParticles.Play();
+    }
+
+    public void PlayHeartParticles()
+    {
+        heartParticles.Play();
     }
 }
