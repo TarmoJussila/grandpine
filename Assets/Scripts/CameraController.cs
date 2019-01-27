@@ -27,6 +27,9 @@ public class CameraController : Singleton<CameraController>
         {
             Shake(6, 5);
         }
+
+        RenderSettings.fogEndDistance = 7f + Vector3.Distance(PlayerController.Instance.transform.position, cam.transform.position);
+        Debug.Log(RenderSettings.fogEndDistance);
     }
 
     void LateUpdate()
@@ -54,7 +57,6 @@ public class CameraController : Singleton<CameraController>
         StartCoroutine(Zoom(-1, speed, amount));
     }
 
-    // https://en.wikipedia.org/wiki/Damped_sine_wave
     private IEnumerator ProcessShake(float shakeSpeed, float shakeForce)
     {
         while (shakeTime < 10)
@@ -77,6 +79,15 @@ public class CameraController : Singleton<CameraController>
         {
             Vector3 position = originalPosition + forward * amount * time;
             cam.transform.position = position;
+
+            if (direction < 0)
+            {
+                RenderSettings.fogEndDistance = 7f + Vector3.Distance(PlayerController.Instance.transform.position, cam.transform.position);
+                Debug.Log(RenderSettings.fogEndDistance);
+
+                cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, Quaternion.Euler(15, 0f, 0f), Time.deltaTime * 0.1f);
+            }
+
             yield return null;
         }
         cam.transform.position = originalPosition + forward * amount;
