@@ -5,23 +5,26 @@ using UnityEngine;
 public class PlayerController : Singleton<PlayerController>
 {
     public Transform PlayerTransform { get { return player.transform; } }
-    public Tree Tree { get { return tree; } }
     public Twig Twig { get { return twig; } }
+    public Axe Axe { get { return axe; } }
+    public Tree Tree { get { return tree; } }
 
     [Header("References")]
     [SerializeField] private GameObject player;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject playerTwig;
     [SerializeField] private GameObject playerAxe;
-    [SerializeField] private GameObject houseDoor;
-    [SerializeField] private Tree tree;
     [SerializeField] private Twig twig;
+    [SerializeField] private GameObject houseDoor;
+    [SerializeField] private Axe axe;
+    [SerializeField] private Tree tree;
 
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 50f;
-    [SerializeField] private float houseDoorRange = 3f;
-    [SerializeField] private float treeRange = 4f;
     [SerializeField] private float twigRange = 2f;
+    [SerializeField] private float houseDoorRange = 3f;
+    [SerializeField] private float axeRange = 2f;
+    [SerializeField] private float treeRange = 4f;
     [SerializeField] private float actionDelay = 1f;
 
     private bool isHoldingAnything { get { return isHoldingTwig || isHoldingAxe; } }
@@ -69,15 +72,23 @@ public class PlayerController : Singleton<PlayerController>
             {
                 return;
             }
-
-            if (IsHouseDoorInRange() && isHoldingTwig)
+            
+            if (IsTwigInRange() && !isHoldingAnything)
+            {
+                if (!twig.IsCollected)
+                {
+                    playerAnimator.SetTrigger("Collect");
+                    currentActionTimer = actionDelay;
+                }
+            }
+            else if (IsHouseDoorInRange() && isHoldingTwig)
             {
                 DisableTwig();
                 currentActionTimer = actionDelay;
             }
-            else if (IsTwigInRange() && !isHoldingAnything)
+            else if (IsAxeInRange() && !isHoldingAnything)
             {
-                if (!twig.IsCollected)
+                if (!axe.IsCollected)
                 {
                     playerAnimator.SetTrigger("Collect");
                     currentActionTimer = actionDelay;
@@ -123,18 +134,23 @@ public class PlayerController : Singleton<PlayerController>
         isHoldingAxe = false;
     }
 
+    private bool IsTwigInRange()
+    {
+        return twigRange > Vector3.Distance(twig.transform.position, player.transform.position);
+    }
+
     private bool IsHouseDoorInRange()
     {
         return houseDoorRange > Vector3.Distance(houseDoor.transform.position, player.transform.position);
     }
 
+    private bool IsAxeInRange()
+    {
+        return axeRange > Vector3.Distance(axe.transform.position, player.transform.position);
+    }
+
     private bool IsTreeInRange()
     {
         return treeRange > Vector3.Distance(tree.transform.position, player.transform.position);
-    }
-
-    private bool IsTwigInRange()
-    {
-        return twigRange > Vector3.Distance(twig.transform.position, player.transform.position);
     }
 }
