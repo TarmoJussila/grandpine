@@ -17,6 +17,7 @@ TextureImporter:
     21300024: Hand_twig
     21300026: hand_axe
     21300028: ukkoSwing1b
+    21300030: Eyebrows
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -416,6 +417,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8a35423e5cc474ee387a544a30ae7aec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eyebrows
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 37
+        width: 171
+        height: 88
+      alignment: 9
+      pivot: {x: 0.51998097, y: 0.3835184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6728f5391f7504dca85dc8baa7dbcfc2
       vertices: []
       indices: 
       edges: []
