@@ -12,6 +12,7 @@ public enum SoundType
     TreeHit2,
     TreeFall,
     TwigCollect,
+    Sob,
 }
 
 [System.Serializable]
