@@ -18,8 +18,14 @@ public class PlayerEmotes : MonoBehaviour
     [SerializeField] private Sprite axeSprite;
     [SerializeField] private Sprite heartSprite;
     private Vector3 playerDirection;
+    private Vector3 originalEmoteRendererPosition;
 
     private float animationTime = 0;
+
+    private void Start()
+    {
+        originalEmoteRendererPosition = emoteRenderer.transform.localPosition;
+    }
 
     private void Update()
     {
@@ -31,10 +37,14 @@ public class PlayerEmotes : MonoBehaviour
     public void ShowEmote(Emote emote)
     {
         Sprite sprite = null;
+        Vector3 offset = Vector3.zero;
+        Quaternion rotation = Quaternion.identity;
         switch (emote)
         {
             case Emote.Twig:
                 sprite = twigSprite;
+                offset = new Vector3(-0.5f, -0.5f, 0);
+                rotation = Quaternion.Euler(0, 0, -45f);
                 break;
             case Emote.Tree:
                 sprite = treeSprite;
@@ -51,11 +61,15 @@ public class PlayerEmotes : MonoBehaviour
         }
         if (sprite != null)
         {
+            emoteRenderer.transform.localPosition = originalEmoteRendererPosition + offset;
+            emoteRenderer.transform.localRotation = rotation;
             emoteRenderer.sprite = sprite;
             emoteRenderer.gameObject.SetActive(false);
+            emoteRenderer.color = new Color(emoteRenderer.color.r, emoteRenderer.color.g, emoteRenderer.color.b, 1);
             foreach (SpriteRenderer bubbleRenderer in bubbleRenderers)
             {
                 bubbleRenderer.gameObject.SetActive(false);
+                bubbleRenderer.color = new Color(bubbleRenderer.color.r, bubbleRenderer.color.g, bubbleRenderer.color.b, 1);
             }
             StopAllCoroutines();
             StartCoroutine(AnimateBubbles(sprite));

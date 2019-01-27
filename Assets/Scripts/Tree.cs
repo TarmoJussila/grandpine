@@ -35,6 +35,11 @@ public class Tree : MonoBehaviour
                 {
                     AudioController.Instance.PlaySound(SoundType.TreeHit2);
                 }
+
+                if (hitAmount <= 1)
+                {
+                    AudioController.Instance.PlaySound(SoundType.Sob);
+                }
             }
             else
             {
