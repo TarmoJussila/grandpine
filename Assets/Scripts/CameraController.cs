@@ -17,6 +17,8 @@ public class CameraController : Singleton<CameraController>
     private Vector3 shakeOffset = Vector3.zero;
     private Vector2 shakeAmount;
 
+    private readonly float cameraSmoothing = 5f;
+
     void Start()
     {
         startPosition = transform.position;
@@ -29,7 +31,7 @@ public class CameraController : Singleton<CameraController>
 
     void LateUpdate()
     {
-        transform.rotation = PlayerController.Instance.transform.rotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, PlayerController.Instance.transform.rotation, cameraSmoothing * Time.deltaTime);
     }
 
     public void Shake(float shakeSpeed, float shakeForce)
