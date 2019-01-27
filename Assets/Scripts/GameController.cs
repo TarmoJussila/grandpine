@@ -20,6 +20,17 @@ public class GameController : Singleton<GameController>
         Application.targetFrameRate = targetFps;
     }
 
+    public void Update()
+    {
+        if (currentGameState == GameState.GameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
+    }
+
     public void SetGameState(GameState gameState)
     {
         if (currentGameState != gameState)
@@ -37,7 +48,7 @@ public class GameController : Singleton<GameController>
     {
         yield return new WaitForSeconds(2f);
 
-        CameraController.Instance.ZoomOut(0.05f, 120f);
+        CameraController.Instance.ZoomOut(0.02f, 120f);
         AudioController.Instance.MinimizeAmbientVolume();
         AudioController.Instance.MaximizeMusicVolume();
     }
