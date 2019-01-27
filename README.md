@@ -1,7 +1,7 @@
 
 # GRAND PINE
 
-**Team Piners** is excited to introduce **Grand Pine**. 
+**Team Piners** is excited to introduce **Grand Pine**: A melancholy story about warmth and solitude, growing and living in a winter wonderland.
 
 # Watch
 
@@ -29,6 +29,6 @@ Tarmo Jussila - Programming
 
 Juho Turpeinen - Programming
 
-Jussi Perttola - Art
+Joni Suhonen - 2D Art & Audio
 
-Joni Suhonen - Art
+Jussi Perttola - 3D Modeling
