@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727298244428935591}
-  - component: {fileID: 4018558928564882564}
+  - component: {fileID: 4304101206342385248}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
---- !u!114 &4018558928564882564
+--- !u!114 &4304101206342385248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +120,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4727298244428935588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3d22e83ba0fb124990e83becf40ae86, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ad59458807ac34ca3bc51bc78908b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

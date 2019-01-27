@@ -27,7 +27,6 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float treeRange = 4f;
     [SerializeField] private float actionDelay = 1f;
 
-    private bool isHoldingAnything { get { return isHoldingTwig || isHoldingAxe; } }
     private bool isHoldingTwig;
     private bool isHoldingAxe;
     private float currentActionTimer;
@@ -67,15 +66,14 @@ public class PlayerController : Singleton<PlayerController>
             playerAnimator.SetTrigger("StopWalk");
         }
 
-        bool treeinRange = IsTreeInRange();
-        if (treeinRange && !treeWasInRange)
+        bool treeInRange = IsTreeInRange();
+        if (treeInRange && !treeWasInRange)
         {
             tree.PlayHeartParticles();
             treeWasInRange = true;
         }
-        else if (!treeinRange)
+        else if (!treeInRange)
         {
-
             treeWasInRange = false;
         }
 
@@ -86,11 +84,11 @@ public class PlayerController : Singleton<PlayerController>
                 return;
             }
             
-            if (IsTwigInRange() && !isHoldingAnything)
+            if (IsTwigInRange() && !isHoldingTwig)
             {
                 if (!twig.IsCollected)
                 {
-                    playerAnimator.SetTrigger("Collect");
+                    playerAnimator.SetTrigger("CollectTwig");
                     currentActionTimer = actionDelay;
                 }
             }
@@ -99,11 +97,11 @@ public class PlayerController : Singleton<PlayerController>
                 DisableTwig();
                 currentActionTimer = actionDelay;
             }
-            else if (IsAxeInRange() && !isHoldingAnything)
+            else if (IsAxeInRange() && !isHoldingAxe)
             {
                 if (!axe.IsCollected)
                 {
-                    playerAnimator.SetTrigger("Collect");
+                    playerAnimator.SetTrigger("CollectAxe");
                     currentActionTimer = actionDelay;
                 }
             }

@@ -53,11 +53,11 @@ public class AudioController : Singleton<AudioController>
 
     private IEnumerator RaiseAmbientVolume()
     {
-        yield return null;
-
         while (ambientAudioSource.volume < ambientTargetVolume)
         {
-            ambientAudioSource.volume = Mathf.Min(ambientAudioSource.volume + Time.deltaTime, ambientTargetVolume);
+            ambientAudioSource.volume = Mathf.Min(ambientAudioSource.volume + Time.deltaTime * 0.1f, ambientTargetVolume);
+
+            yield return null;
         }
     }
 
