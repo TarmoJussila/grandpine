@@ -20,6 +20,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject houseDoor;
     [SerializeField] private Axe axe;
     [SerializeField] private Tree tree;
+    [SerializeField] private HouseLight houseInsideLight;
+    [SerializeField] private HouseLight chimneyInsideLight;
 
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 50f;
@@ -112,6 +114,8 @@ public class PlayerController : Singleton<PlayerController>
                 {
                     playerEmotes.ShowEmote(Emote.Twig);
                 }
+                houseInsideLight.AddLight(5.5f);
+                chimneyInsideLight.AddLight(5.5f);
             }
             else if (IsAxeInRange() && !isHoldingAxe && twigsCollected >= targetTwigAmount)
             {
