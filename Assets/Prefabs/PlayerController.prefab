@@ -460,11 +460,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ukko
       objectReference: {fileID: 0}
-    - target: {fileID: 8953297812525444643, guid: a79f4527764b24879bfcd6bf1859e07b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1503358201590998302, guid: a79f4527764b24879bfcd6bf1859e07b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -534,11 +529,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1361245578277278871, guid: a79f4527764b24879bfcd6bf1859e07b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5239205404901681101, guid: a79f4527764b24879bfcd6bf1859e07b,
         type: 3}

@@ -29,6 +29,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private bool isHoldingTwig;
     private bool isHoldingAxe;
+    private int twigsCollected;
+    private int targetTwigAmount = 1;
     private float currentActionTimer;
     private bool treeWasInRange;
 
@@ -95,9 +97,10 @@ public class PlayerController : Singleton<PlayerController>
             else if (IsHouseDoorInRange() && isHoldingTwig)
             {
                 DisableTwig();
+                twigsCollected++;
                 currentActionTimer = actionDelay;
             }
-            else if (IsAxeInRange() && !isHoldingAxe)
+            else if (IsAxeInRange() && !isHoldingAxe && twigsCollected >= targetTwigAmount)
             {
                 if (!axe.IsCollected)
                 {
