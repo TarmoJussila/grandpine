@@ -35,9 +35,9 @@ public class GameController : Singleton<GameController>
 
     private IEnumerator GameOverCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
-        CameraController.Instance.ZoomOut(0.1f, 70f);
+        CameraController.Instance.ZoomOut(0.05f, 120f);
         AudioController.Instance.MinimizeAmbientVolume();
         AudioController.Instance.MaximizeMusicVolume();
     }
