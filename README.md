@@ -5,11 +5,11 @@
 
 # Watch
 
-Gameplay video: [LINK]
+Gameplay video: [**Watch**](https://youtu.be/0r_XfdJgD3o)
 
 # Download
 
-Executable (Windows): https://ggj.s3.amazonaws.com/games/2019/01/73309/exec/-Pdd0/GrandPine.zip
+Executable (Windows/macOS): [**Download**](https://ggj.s3.amazonaws.com/games/2019/01/184589/exec/nCdYE/GrandPine.zip)
 
 # Build
 
