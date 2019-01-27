@@ -1,7 +1,7 @@
 
 # GRAND PINE
 
-**Team Piners** is excited to introduce **Grand Pine**: A melancholy story about warmth and solitude, growing and living in a winter wonderland.
+**Team Piners** is excited to introduce **Grand Pine**: A melancholy story about warmth and solitude, growing and living in a winter wonderland. The game was created in 48 hours during the Global Game Jam / Finnish Game Jam 2019.
 
 # Watch
 
