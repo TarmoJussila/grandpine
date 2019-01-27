@@ -47,5 +47,9 @@ public class GameController : Singleton<GameController>
         CameraController.Instance.ZoomOut(0.02f, 120f);
         AudioController.Instance.MinimizeAmbientVolume();
         AudioController.Instance.MaximizeMusicVolume();
+
+        yield return new WaitForSeconds(6f);
+
+        FadeController.Instance.ShowMemories();
     }
 }
