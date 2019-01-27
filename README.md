@@ -5,7 +5,7 @@
 
 # Watch
 
-Gameplay video: [LINK]
+Gameplay video: https://youtu.be/0r_XfdJgD3o
 
 # Download
 
