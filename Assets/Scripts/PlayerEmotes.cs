@@ -21,14 +21,8 @@ public class PlayerEmotes : MonoBehaviour
 
     private float animationTime = 0;
 
-    private void Start()
-    {
-        ShowEmote(Emote.Twig);
-    }
-
     private void Update()
     {
-        // Not a h4ck :D
         Vector3 scale = container.transform.localScale;
         scale.x = Mathf.Abs(scale.x);
         container.transform.localScale = scale;

@@ -398,14 +398,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8732795838496825334}
   playerAnimator: {fileID: 280864912066229684}
+  playerEmotes: {fileID: 5002123408565911827}
   playerTwig: {fileID: 6309262809583687237}
   playerAxe: {fileID: 4119558152733863153}
-  twig: {fileID: 0}
+  twigs:
+  - {fileID: 0}
+  - {fileID: 0}
   houseDoor: {fileID: 0}
   axe: {fileID: 0}
   tree: {fileID: 0}
   rotationSpeed: 50
-  twigRange: 2
+  twigRange: 3
   houseDoorRange: 3
   axeRange: 2
   treeRange: 4
@@ -422,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75ce644b78bc4a8a88628a7f4b3a50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 2
   fadeDuration: 1
   bubbleDelay: 0.3
   container: {fileID: 101596484}
@@ -432,10 +435,10 @@ MonoBehaviour:
   - {fileID: 974715935}
   - {fileID: 1538006629}
   twigSprite: {fileID: 21300020, guid: 81202bc61418c4d6c95374d278ea2e0a, type: 3}
-  treeSprite: {fileID: 0}
-  houseSprite: {fileID: 0}
-  axeSprite: {fileID: 0}
-  heartSprite: {fileID: 0}
+  treeSprite: {fileID: 21300004, guid: 0c0b7d9a712c9456c9e4062270527eaa, type: 3}
+  houseSprite: {fileID: 21300000, guid: af1f1b45fa6b5e64894c04ceb8a592f7, type: 3}
+  axeSprite: {fileID: 21300022, guid: 81202bc61418c4d6c95374d278ea2e0a, type: 3}
+  heartSprite: {fileID: 21300006, guid: 0c0b7d9a712c9456c9e4062270527eaa, type: 3}
 --- !u!114 &145450536301682772
 MonoBehaviour:
   m_ObjectHideFlags: 0
