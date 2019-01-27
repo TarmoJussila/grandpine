@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
     public Transform PlayerTransform { get { return player.transform; } }
-    public Twig Twig { get { return twig; } }
+    public Twig Twig { get { return GetClosestTwig(); } }
     public Axe Axe { get { return axe; } }
     public Tree Tree { get { return tree; } }
 
@@ -14,7 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject playerTwig;
     [SerializeField] private GameObject playerAxe;
-    [SerializeField] private Twig twig;
+    [SerializeField] private List<Twig> twigs;
     [SerializeField] private GameObject houseDoor;
     [SerializeField] private Axe axe;
     [SerializeField] private Tree tree;
@@ -30,7 +31,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool isHoldingTwig;
     private bool isHoldingAxe;
     private int twigsCollected;
-    private int targetTwigAmount = 1;
+    private int targetTwigAmount = 2;
     private float currentActionTimer;
     private bool treeWasInRange;
 
@@ -88,7 +89,7 @@ public class PlayerController : Singleton<PlayerController>
             
             if (IsTwigInRange() && !isHoldingTwig)
             {
-                if (!twig.IsCollected)
+                if (!GetClosestTwig().IsCollected)
                 {
                     playerAnimator.SetTrigger("CollectTwig");
                     currentActionTimer = actionDelay;
@@ -148,9 +149,18 @@ public class PlayerController : Singleton<PlayerController>
         isHoldingAxe = false;
     }
 
+    private Twig GetClosestTwig()
+    {
+        var orderedTwigs = twigs.OrderBy(x => Vector3.Distance(player.transform.position, x.transform.position)).ToList();
+
+        var closestTwig = orderedTwigs.First();
+
+        return closestTwig;
+    }
+
     private bool IsTwigInRange()
     {
-        return twigRange > Vector3.Distance(twig.transform.position, player.transform.position);
+        return twigRange > Vector3.Distance(GetClosestTwig().transform.position, player.transform.position);
     }
 
     private bool IsHouseDoorInRange()

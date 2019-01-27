@@ -400,7 +400,9 @@ MonoBehaviour:
   playerAnimator: {fileID: 280864912066229684}
   playerTwig: {fileID: 6309262809583687237}
   playerAxe: {fileID: 4119558152733863153}
-  twig: {fileID: 0}
+  twigs:
+  - {fileID: 0}
+  - {fileID: 0}
   houseDoor: {fileID: 0}
   axe: {fileID: 0}
   tree: {fileID: 0}
