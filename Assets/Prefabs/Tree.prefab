@@ -4724,7 +4724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474538307579367801}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.074, y: -2.3, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 462212306003038475}
@@ -4937,6 +4937,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 1084423452734218710, guid: ff4381daa8bd14d68b252cbf7cb69eff,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084423452734218710, guid: ff4381daa8bd14d68b252cbf7cb69eff,
+        type: 3}
+      propertyPath: ShapeModule.length
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6514846800090058843, guid: ff4381daa8bd14d68b252cbf7cb69eff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4990,11 +5000,6 @@ PrefabInstance:
     - target: {fileID: 6514846800090058843, guid: ff4381daa8bd14d68b252cbf7cb69eff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084423452734218710, guid: ff4381daa8bd14d68b252cbf7cb69eff,
-        type: 3}
-      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
