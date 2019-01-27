@@ -53,7 +53,7 @@ public class FadeController : Singleton<FadeController>
             yield return null;
         }
 
-        fadeImage.color = Color.clear;
+        fadeImage.color = Color.black;
     }
 
     public void ShowMemories()
@@ -118,6 +118,9 @@ public class FadeController : Singleton<FadeController>
 
         yield return new WaitForSeconds(memoryTime);
 
+        fadeValue = 0f;
+        fadeTargetValue = 1f;
+
         while (fadeValue < fadeTargetValue)
         {
             fadeValue += Time.deltaTime * memoryFadeSpeed;
@@ -125,6 +128,8 @@ public class FadeController : Singleton<FadeController>
 
             yield return null;
         }
+
+        yield return new WaitForSeconds(memoryTime);
 
         StartCoroutine(FadeIn());
 
