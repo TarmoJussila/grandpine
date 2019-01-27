@@ -13,6 +13,7 @@ public enum SoundType
     TreeFall,
     TwigCollect,
     Sob,
+    Fire,
 }
 
 [System.Serializable]
