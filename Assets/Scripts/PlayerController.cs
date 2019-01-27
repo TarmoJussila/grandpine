@@ -13,6 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     [Header("References")]
     [SerializeField] private GameObject player;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private PlayerEmotes playerEmotes;
     [SerializeField] private GameObject playerTwig;
     [SerializeField] private GameObject playerAxe;
     [SerializeField] private List<Twig> twigs;
@@ -37,6 +38,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        playerEmotes.ShowEmote(Emote.Twig);
     }
 
     private void Update()
@@ -93,6 +95,7 @@ public class PlayerController : Singleton<PlayerController>
                 {
                     playerAnimator.SetTrigger("CollectTwig");
                     currentActionTimer = actionDelay;
+                    playerEmotes.ShowEmote(Emote.House);
                 }
             }
             else if (IsHouseDoorInRange() && isHoldingTwig)
@@ -100,6 +103,15 @@ public class PlayerController : Singleton<PlayerController>
                 DisableTwig();
                 twigsCollected++;
                 currentActionTimer = actionDelay;
+
+                if (twigsCollected >= targetTwigAmount)
+                {
+                    playerEmotes.ShowEmote(Emote.Axe);
+                }
+                else
+                {
+                    playerEmotes.ShowEmote(Emote.Twig);
+                }
             }
             else if (IsAxeInRange() && !isHoldingAxe && twigsCollected >= targetTwigAmount)
             {
@@ -107,6 +119,7 @@ public class PlayerController : Singleton<PlayerController>
                 {
                     playerAnimator.SetTrigger("CollectAxe");
                     currentActionTimer = actionDelay;
+                    playerEmotes.ShowEmote(Emote.Tree);
                 }
             }
             else if (IsTreeInRange() && isHoldingAxe)
@@ -115,6 +128,7 @@ public class PlayerController : Singleton<PlayerController>
                 {
                     playerAnimator.SetTrigger("Hit");
                     currentActionTimer = actionDelay;
+                    playerEmotes.ShowEmote(Emote.Heart);
                 }
             }
         }
