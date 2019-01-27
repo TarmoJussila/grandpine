@@ -6,7 +6,6 @@ public enum GameState
 {
     Game,
     GameOver,
-    Credits,
 }
 
 public class GameController : Singleton<GameController>
@@ -22,12 +21,9 @@ public class GameController : Singleton<GameController>
 
     public void Update()
     {
-        if (currentGameState == GameState.GameOver)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
+            Application.Quit();
         }
     }
 

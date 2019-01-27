@@ -158,6 +158,7 @@ public class PlayerController : Singleton<PlayerController>
 
         if (tree.HasFallen)
         {
+            playerEmotes.ShowEmote(Emote.HeartBroken);
             DisablePlayerControl();
         }
 

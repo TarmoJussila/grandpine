@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Emote { Twig, Tree, House, Axe, Heart }
+public enum Emote { Twig, Tree, House, Axe, Heart, HeartBroken }
 
 public class PlayerEmotes : MonoBehaviour
 {
@@ -17,6 +17,8 @@ public class PlayerEmotes : MonoBehaviour
     [SerializeField] private Sprite houseSprite;
     [SerializeField] private Sprite axeSprite;
     [SerializeField] private Sprite heartSprite;
+    [SerializeField] private Sprite heartBrokenSprite;
+
     private Vector3 playerDirection;
     private Vector3 originalEmoteRendererPosition;
 
@@ -57,6 +59,9 @@ public class PlayerEmotes : MonoBehaviour
                 break;
             case Emote.Heart:
                 sprite = heartSprite;
+                break;
+            case Emote.HeartBroken:
+                sprite = heartBrokenSprite;
                 break;
         }
         if (sprite != null)
