@@ -21,7 +21,16 @@ The game was created with **Unity 2018.3.2f1**.
 
 # Controls
 
-[TODO]
+- Arrow Keys / WASD to move
+- Space / Return to interact
+- ESC to exit
+
+| Action        | Bind          |
+| ------------- |:-------------:|
+| Move Left | A / Left Arrow |
+| Move Right | D / Right Arrow |
+| Interact | Space / Return |
+| Exit | Escape |
 
 # Credits - Team Piners
 
