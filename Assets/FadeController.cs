@@ -12,6 +12,7 @@ public class FadeController : Singleton<FadeController>
     private float fadeValue = 1f;
     private float targetFadeValue = 0f;
     private float fadeSpeed = 0.5f;
+    private float fadeInSpeed = 0.1f;
     private float memoryFadeSpeed = 0.25f;
     private float memoryTime = 3f;
 
@@ -46,7 +47,7 @@ public class FadeController : Singleton<FadeController>
 
         while (fadeValue < targetFadeValue)
         {
-            fadeValue = Mathf.Min(fadeValue + Time.deltaTime * fadeSpeed, targetFadeValue);
+            fadeValue = Mathf.Min(fadeValue + Time.deltaTime * fadeInSpeed, targetFadeValue);
 
             fadeImage.color = new Color(0, 0, 0, fadeValue);
 
