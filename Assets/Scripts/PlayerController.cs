@@ -43,7 +43,6 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
-        playerEmotes.ShowEmote(Emote.Twig);
         StartCoroutine(EnablePlayerInput());
     }
 
@@ -52,6 +51,8 @@ public class PlayerController : Singleton<PlayerController>
         yield return new WaitForSeconds(playerInputDelay);
 
         isPlayerInputEnabled = true;
+
+        playerEmotes.ShowEmote(Emote.Twig);
     }
 
     private void Update()
@@ -109,7 +110,7 @@ public class PlayerController : Singleton<PlayerController>
             {
                 return;
             }
-            
+
             if (IsTwigInRange() && !isHoldingTwig)
             {
                 if (!GetClosestTwig().IsCollected)

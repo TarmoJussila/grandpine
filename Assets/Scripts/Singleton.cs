@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
@@ -39,12 +37,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-
     private void OnApplicationQuit()
     {
         m_ShuttingDown = true;
     }
-
 
     private void OnDestroy()
     {

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : Singleton<CameraController>
@@ -19,7 +18,7 @@ public class CameraController : Singleton<CameraController>
 
     private readonly float cameraSmoothing = 5f;
 
-    void Start()
+    private void Start()
     {
         startPosition = transform.position;
         cam = GetComponentInChildren<Camera>();
@@ -29,7 +28,7 @@ public class CameraController : Singleton<CameraController>
         }
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, PlayerController.Instance.transform.rotation, cameraSmoothing * Time.deltaTime);
     }

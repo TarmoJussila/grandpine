@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState
@@ -48,7 +47,7 @@ public class GameController : Singleton<GameController>
         AudioController.Instance.MinimizeAmbientVolume();
         AudioController.Instance.MaximizeMusicVolume();
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
 
         FadeController.Instance.ShowMemories();
     }

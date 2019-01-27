@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum Emote { Twig, Tree, House, Axe, Heart, HeartBroken }
@@ -27,6 +26,7 @@ public class PlayerEmotes : MonoBehaviour
     private void Start()
     {
         originalEmoteRendererPosition = emoteRenderer.transform.localPosition;
+        container.SetActive(false);
     }
 
     private void Update()
@@ -41,29 +41,36 @@ public class PlayerEmotes : MonoBehaviour
         Sprite sprite = null;
         Vector3 offset = Vector3.zero;
         Quaternion rotation = Quaternion.identity;
+
         switch (emote)
         {
             case Emote.Twig:
-                sprite = twigSprite;
-                offset = new Vector3(-0.5f, -0.5f, 0);
-                rotation = Quaternion.Euler(0, 0, -45f);
-                break;
+            sprite = twigSprite;
+            offset = new Vector3(-0.5f, -0.5f, 0);
+            rotation = Quaternion.Euler(0, 0, -45f);
+            break;
+
             case Emote.Tree:
-                sprite = treeSprite;
-                break;
+            sprite = treeSprite;
+            break;
+
             case Emote.House:
-                sprite = houseSprite;
-                break;
+            sprite = houseSprite;
+            break;
+
             case Emote.Axe:
-                sprite = axeSprite;
-                break;
+            sprite = axeSprite;
+            break;
+
             case Emote.Heart:
-                sprite = heartSprite;
-                break;
+            sprite = heartSprite;
+            break;
+
             case Emote.HeartBroken:
-                sprite = heartBrokenSprite;
-                break;
+            sprite = heartBrokenSprite;
+            break;
         }
+
         if (sprite != null)
         {
             emoteRenderer.sprite = sprite;
@@ -93,11 +100,13 @@ public class PlayerEmotes : MonoBehaviour
             animationTime = 0;
         }
         emoteRenderer.gameObject.SetActive(true);
+
         while (animationTime < duration)
         {
             animationTime += Time.deltaTime;
             yield return null;
         }
+
         for (float time = 0; time < fadeDuration; time += Time.deltaTime)
         {
             foreach (SpriteRenderer spriteRenderer in bubbleRenderers)
@@ -106,9 +115,9 @@ public class PlayerEmotes : MonoBehaviour
                 color.a = 1 - time / fadeDuration;
                 spriteRenderer.color = color;
             }
-            Color empteColor = emoteRenderer.color;
-            empteColor.a = 1 - time / fadeDuration;
-            emoteRenderer.color = empteColor;
+            Color emoteColor = emoteRenderer.color;
+            emoteColor.a = 1 - time / fadeDuration;
+            emoteRenderer.color = emoteColor;
             yield return null;
         }
         container.SetActive(false);
