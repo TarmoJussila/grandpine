@@ -66,8 +66,6 @@ public class PlayerEmotes : MonoBehaviour
         }
         if (sprite != null)
         {
-            emoteRenderer.transform.localPosition = originalEmoteRendererPosition + offset;
-            emoteRenderer.transform.localRotation = rotation;
             emoteRenderer.sprite = sprite;
             emoteRenderer.gameObject.SetActive(false);
             emoteRenderer.color = new Color(emoteRenderer.color.r, emoteRenderer.color.g, emoteRenderer.color.b, 1);
