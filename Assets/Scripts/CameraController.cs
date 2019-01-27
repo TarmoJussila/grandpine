@@ -27,9 +27,6 @@ public class CameraController : Singleton<CameraController>
         {
             Shake(6, 5);
         }
-
-        RenderSettings.fogEndDistance = 7f + Vector3.Distance(PlayerController.Instance.transform.position, cam.transform.position);
-        Debug.Log(RenderSettings.fogEndDistance);
     }
 
     void LateUpdate()
@@ -83,9 +80,8 @@ public class CameraController : Singleton<CameraController>
             if (direction < 0)
             {
                 RenderSettings.fogEndDistance = 7f + Vector3.Distance(PlayerController.Instance.transform.position, cam.transform.position);
-                Debug.Log(RenderSettings.fogEndDistance);
 
-                cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, Quaternion.Euler(15, 0f, 0f), Time.deltaTime * 0.1f);
+                cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, Quaternion.Euler(new Vector3(15f, 0, 0f)), time);
             }
 
             yield return null;

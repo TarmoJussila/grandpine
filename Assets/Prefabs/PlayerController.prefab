@@ -437,8 +437,8 @@ MonoBehaviour:
   - {fileID: 974715935}
   - {fileID: 1538006629}
   twigSprite: {fileID: 21300020, guid: 81202bc61418c4d6c95374d278ea2e0a, type: 3}
-  treeSprite: {fileID: 21300004, guid: 0c0b7d9a712c9456c9e4062270527eaa, type: 3}
-  houseSprite: {fileID: 21300000, guid: af1f1b45fa6b5e64894c04ceb8a592f7, type: 3}
+  treeSprite: {fileID: 21300000, guid: f20476a3805294391a2364a42067c5b7, type: 3}
+  houseSprite: {fileID: 21300000, guid: 7b62bb4db504f45839f9ae8e2a85dd30, type: 3}
   axeSprite: {fileID: 21300022, guid: 81202bc61418c4d6c95374d278ea2e0a, type: 3}
   heartSprite: {fileID: 21300006, guid: 0c0b7d9a712c9456c9e4062270527eaa, type: 3}
 --- !u!114 &145450536301682772
@@ -535,11 +535,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.35
       objectReference: {fileID: 0}
-    - target: {fileID: 2322245376069221604, guid: a79f4527764b24879bfcd6bf1859e07b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d1671b916796a494abe54eebd991faac, type: 2}
     - target: {fileID: 5239205404901681101, guid: a79f4527764b24879bfcd6bf1859e07b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -560,6 +555,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2322245376069221604, guid: a79f4527764b24879bfcd6bf1859e07b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d1671b916796a494abe54eebd991faac, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79f4527764b24879bfcd6bf1859e07b, type: 3}
 --- !u!1 &8732795838496825334 stripped
