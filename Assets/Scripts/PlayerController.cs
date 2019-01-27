@@ -34,17 +34,33 @@ public class PlayerController : Singleton<PlayerController>
     private bool isHoldingTwig;
     private bool isHoldingAxe;
     private int twigsCollected;
-    private int targetTwigAmount = 2;
     private float currentActionTimer;
     private bool treeWasInRange;
+    private bool isPlayerInputEnabled;
+
+    private readonly int targetTwigAmount = 2;
+    private readonly float playerInputDelay = 1f;
 
     private void Start()
     {
         playerEmotes.ShowEmote(Emote.Twig);
+        StartCoroutine(EnablePlayerInput());
+    }
+
+    private IEnumerator EnablePlayerInput()
+    {
+        yield return new WaitForSeconds(playerInputDelay);
+
+        isPlayerInputEnabled = true;
     }
 
     private void Update()
     {
+        if (!isPlayerInputEnabled)
+        {
+            return;
+        }
+
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + Time.deltaTime * rotationSpeed, 0);
@@ -73,15 +89,18 @@ public class PlayerController : Singleton<PlayerController>
             playerAnimator.SetTrigger("StopWalk");
         }
 
-        bool treeInRange = IsTreeInRange();
-        if (treeInRange && !treeWasInRange)
+        if (!tree.HasFallen)
         {
-            tree.PlayHeartParticles();
-            treeWasInRange = true;
-        }
-        else if (!treeInRange)
-        {
-            treeWasInRange = false;
+            bool treeInRange = IsTreeInRange();
+            if (treeInRange && !treeWasInRange)
+            {
+                tree.PlayHeartParticles();
+                treeWasInRange = true;
+            }
+            else if (!treeInRange)
+            {
+                treeWasInRange = false;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
@@ -137,6 +156,11 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
 
+        if (tree.HasFallen)
+        {
+            DisablePlayerControl();
+        }
+
         if (currentActionTimer > 0f)
         {
             currentActionTimer = Mathf.Max(currentActionTimer - Time.deltaTime, 0f);
@@ -153,6 +177,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerTwig.SetActive(false);
         isHoldingTwig = false;
+
+        AudioController.Instance.PlaySound(SoundType.Fire);
     }
 
     public void EnableAxe()
@@ -165,6 +191,16 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerAxe.SetActive(false);
         isHoldingAxe = false;
+    }
+
+    public void DisablePlayerControl()
+    {
+        isPlayerInputEnabled = false;
+
+        GameController.Instance.SetGameState(GameState.GameOver);
+
+        playerAnimator.ResetTrigger("Walk");
+        playerAnimator.SetTrigger("StopWalk");
     }
 
     private Twig GetClosestTwig()

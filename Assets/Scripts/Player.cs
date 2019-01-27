@@ -21,21 +21,21 @@ public class Player : MonoBehaviour
     {
         PlayerController.Instance.Twig.Collect();
         AudioController.Instance.PlaySound(SoundType.TwigCollect);
-        AudioController.Instance.RaiseMusicVolume();
+        AudioController.Instance.IncreaseMusicVolume();
     }
 
     private void AxeCollect()
     {
         PlayerController.Instance.Axe.Collect();
         AudioController.Instance.PlaySound(SoundType.TwigCollect);
-        AudioController.Instance.RaiseMusicVolume();
+        AudioController.Instance.IncreaseMusicVolume();
     }
 
     private void TreeHit()
     {
         PlayerController.Instance.Tree.Hit();
         AudioController.Instance.PlaySound(SoundType.AxeHit);
-        AudioController.Instance.RaiseMusicVolume();
+        AudioController.Instance.IncreaseMusicVolume();
     }
 
     private void CameraShake()
