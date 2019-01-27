@@ -28,8 +28,17 @@ public class GameController : Singleton<GameController>
 
             if (gameState == GameState.GameOver)
             {
-                CameraController.Instance.ZoomOut(0.5f, 10f);
+                StartCoroutine(GameOverCoroutine());
             }
         }
+    }
+
+    private IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        CameraController.Instance.ZoomOut(0.1f, 70f);
+        AudioController.Instance.MinimizeAmbientVolume();
+        AudioController.Instance.MaximizeMusicVolume();
     }
 }

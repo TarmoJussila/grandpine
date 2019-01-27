@@ -63,7 +63,22 @@ public class AudioController : Singleton<AudioController>
         }
     }
 
-    public void RaiseMusicVolume()
+    public void MinimizeAmbientVolume()
+    {
+        StartCoroutine(LowerAmbientVolume());
+    }
+
+    private IEnumerator LowerAmbientVolume()
+    {
+        while (ambientAudioSource.volume > 0f)
+        {
+            ambientAudioSource.volume = Mathf.Max(ambientAudioSource.volume - Time.deltaTime * 0.1f, 0f);
+
+            yield return null;
+        }
+    }
+
+    public void IncreaseMusicVolume()
     {
         if (!musicAudioSource.isPlaying)
         {
@@ -71,6 +86,21 @@ public class AudioController : Singleton<AudioController>
         }
 
         musicAudioSource.volume = Mathf.Min(musicAudioSource.volume + musicRaiseVolume, musicTargetVolume);
+    }
+
+    public void MaximizeMusicVolume()
+    {
+        StartCoroutine(RaiseMusicVolume());
+    }
+
+    private IEnumerator RaiseMusicVolume()
+    {
+        while (musicAudioSource.volume < musicTargetVolume)
+        {
+            musicAudioSource.volume = Mathf.Min(musicAudioSource.volume + Time.deltaTime * 0.1f, musicTargetVolume);
+
+            yield return null;
+        }
     }
 
     public void PlaySound(SoundType soundType)
