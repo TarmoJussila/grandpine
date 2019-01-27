@@ -9,7 +9,7 @@ Gameplay video: [LINK]
 
 # Download
 
-Executable (Windows): [LINK]
+Executable (Windows): https://ggj.s3.amazonaws.com/games/2019/01/73309/exec/-Pdd0/GrandPine.zip
 
 # Build
 
